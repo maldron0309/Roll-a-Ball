@@ -9,9 +9,12 @@ public class enemyAI : MonoBehaviour
     public float speed;
     public GameObject gameOverUI;
 
+    Rigidbody rb;
+
     void Start()
     {
         playerTransform = GameObject.Find("Player").transform;
+        Rigidbody rb = GetComponent<Rigidbody>();
     }
 
     void Update()
@@ -34,7 +37,7 @@ public class enemyAI : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            SceneManager.LoadScene("ChoStage"); // ChoStage 씬으로 이동
+            SceneManager.LoadScene("GameOver"); 
         }
     }
 }
